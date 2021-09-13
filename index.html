@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <article class="logo-container">
+      <div class="logo">
+        <span>SPLI</span>
+        <span>TTER</span>
+      </div>
+    </article>
+    <section class="app-wrapper">
+      <div class="column">
+        <article class="app-input">
+          <label class="label-dark">Bill</label>
+          <label class="input-icon-dollar">
+            <input type="text" class="input input-money" placeholder="0.00">
+          </label>
+        </article>
+        <div class="container">
+          <label class="label-dark">Select Tip %</label>
+          <article class="app-btn-container">
+            <button class="btn-tip">5%</button>
+            <button class="btn-tip">10%</button>
+            <button class="btn-tip">15%</button>
+            <button class="btn-tip">25%</button>
+            <button class="btn-tip">50%</button>
+            <input type="text" placeholder="Custom" class="input-custom">
+          </article>
+        </div>
+        <article class="app-input">
+          <label class="label-dark">Number of People</label>
+          <label class="input-icon-people">
+          <input type="text" class="input" placeholder="1">
+          </label>
+        </article>
+      </div>
+      <div class="column">
+        <article class="container">
+          <div class="result-container">
+            <div class="container">
+              <label class="label-light">Tip Amount</label>
+              <sub class="sub-label">/ person</sub>
+            </div>
+            <span class="total">$0.00</span>
+          </div>
+          <div class="result-container">
+            <div class="container">
+              <label class="label-light">Total</label>
+              <sub class="sub-label">/ person</sub>
+            </div>
+            <span class="total">$0.00</span>
+          </div>
+          <button class="btn-reset">RESET</button>
+        </article>
+      </div>    
+    </section>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Chris Sampson</a>.
+    </div>
+
+  </div>
+</body>
+</html>

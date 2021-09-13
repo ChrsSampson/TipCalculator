@@ -1,0 +1,82 @@
+
+body{
+    font-family: 'Space Mono', monospace;
+}
+
+// -----------labels---------
+.label-dark{
+    color: $Dark_grayish_cyan;
+    font-weight: 700;
+}
+
+.label-light{
+    color: $Light_grayish_cyan;
+    font-weight: 700;
+}
+
+.sub-label{
+    color: $Dark_grayish_cyan;
+}
+
+.total{
+    font-weight: 700;
+    font-size: x-large;
+    color: $Strong_cyan
+}
+
+.logo > span{
+    font-size: 24px;
+    font-weight: bold;
+    color: $Very_dark_cyan
+}
+
+// --------------Inputs-----------------
+input[type="text"]{
+    font-family: 'space mono', monospace;
+}
+
+input[class="input-custom"]{
+    color: $Very_dark_cyan;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+.input{
+    font-size: 24px;
+    color: $Very_dark_cyan;
+    font-weight: 700;
+}
+
+.input-bill{
+    color:$Very_dark_cyan;
+    font-size:large;
+}   
+
+
+// --------------Buttons-----------------
+button{
+    font-family: 'space mono', monospace;
+}
+
+.app-btn-container > button{
+    font-size:larger;
+    font-weight:bold;
+}
+
+.btn-reset{
+    font-size: 20px;
+    font-weight: bold;
+    padding: .5em 0;
+}
+
+
+// --------------Attribute-----------------
+.attribution {
+    font-size: 11px;
+    position: relative;
+    bottom: 0;
+     a{
+        color: hsl(228, 45%, 44%);
+     }
+}

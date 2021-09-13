@@ -1,0 +1,89 @@
+button{
+    border-radius: .5em;
+    border: none;
+    margin:.25em;
+}
+
+input[class~="input"]{
+    border:none;
+    background-color: $Light_grayish_cyan;
+    text-align: right;
+    border-radius: .5em;
+    padding: .5em 1em;
+    width: calc(100% - 2em);
+}
+
+
+
+//---------buttons----------
+.app-btn-container > button{
+    padding:.5em 1em;
+}
+
+.btn-tip{
+    background-color: $Very_dark_cyan;
+    color: $White;
+
+    &:hover{
+        background-color: $Strong_cyan;
+    }
+}
+
+.btn-reset:hover{
+    background-color: $Light_gray_cyan;
+}
+
+// ---------Inputs----------
+.input-custom{
+    margin:.25em;
+    border-radius: .5em;
+    background-color: $Light_grayish_cyan;
+    color: $Dark_grayish_cyan;
+    border:none;
+
+    &:focus{
+        border-color: $Strong_cyan;
+    }
+    &:hover{
+        border-color: $Strong_cyan;
+    }
+}
+
+.input:focus{
+    border-color: $Strong_cyan;
+}
+
+.input-icon-dollar{
+    position: relative;
+
+    &:before{
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        background: url('../images/icon-dollar.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.input-icon-people{
+    position: relative;
+
+    &:before{
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        background: url('../images/icon-person.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+

@@ -1,0 +1,97 @@
+body{
+    background-color: $Light_gray_cyan;
+    margin:0;
+    padding:0;
+
+    section{
+        background-color: $White;
+        padding:1em;
+        border-radius: 1em;
+   }
+
+}
+
+article[class~="logo-container"]{
+    display: grid;
+    place-items: center;
+    background-color: $Light_gray_cyan;
+    height:8em;
+
+    .logo{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+article[class~="app-input"]{
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+}
+
+div[class~="container"]{
+    display: flex;
+    flex-direction: column;
+
+    article[class~="app-btn-container"]{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+article[class~="container"]{
+    display: flex;
+    flex-direction: column;
+    padding:1.5em;
+    border-radius: .5em;
+    background-color: $Very_dark_cyan;
+
+    div[class~="result-container"]{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1em 0;  
+    }
+
+    button{
+        color: $Very_dark_cyan;
+        background-color: $Strong_cyan;
+    }
+}
+
+@media screen and (min-width: 720px){
+    
+    body{
+        display: grid;
+        place-items: center;
+    }
+        
+    .logo-container{
+        margin: 4em 0;
+    }
+
+    .app-wrapper{
+        display: flex;
+        flex-direction: row;
+        margin:0 auto;
+        max-width: 1000px;
+
+        .column{
+            width: 50%;
+        }
+    }
+
+
+    
+    article[class~="container"]{
+        margin-left:.5em;
+        height: calc(100% - 3em);
+
+        button{
+            position: relative;
+            bottom: -55%;
+        }
+    }
+
+}
