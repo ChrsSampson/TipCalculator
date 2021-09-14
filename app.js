@@ -1,6 +1,10 @@
 const tipButtons = document.querySelector('.app-btn-container');
 const billInput = document.querySelector('.input-money')
 const peopleInput = document.querySelector('#people')
+const customTip = document.querySelector('.input-custom')
+
+const reset = document.querySelector('.btn-reset')
+
 
 const tipDisplay = document.querySelector('#tip');
 const totalDisplay = document.querySelector('#total');
@@ -31,19 +35,8 @@ class Calc {
         totalDisplay.textContent = `$${total}`
     }
 
-    throwError (error){
-        console.log(error)
-    }
-
-}
-
-window.onload = () => {
-    calc = new Calc();
-}
-
-tipButtons.addEventListener('click', (e) => {
-    if(e.target.nodeName === "BUTTON"){
-        switch (e.target.textContent){
+    determineTip (input){
+        switch (input){
             case '5%':
                 calc.percent = 0.05
                 break;
@@ -66,12 +59,38 @@ tipButtons.addEventListener('click', (e) => {
                 calc.percent = 0.15
                 break;
         }
+    }
+
+    throwError (error){
+        console.log(error)
+    }
+
+}
+
+window.onload = () => {
+    calc = new Calc();
+}
+
+tipButtons.addEventListener('click', (e) => {
+    if(e.target.nodeName === "BUTTON"){
+        calc.determineTip(e.target.value)
         calc.calculateTip(calc.total, calc.percent, calc.people)
+        customTip.value = ''
     }
 })
 
+customTip.onchange = (e) => {
+    if(!isNaN(e.target.value) ){
+        calc.percent = `.${e.target.value}`
+        calc.calculateTip(calc.total, calc.percent, calc.people)
+    }
+    else{
+        calc.throwError('Enter A Valid Amount')
+    }
+}
+
 billInput.onchange = (e) => {
-    if(!isNaN( parseInt(e.target.value) ) ){
+    if(!isNaN(e.target.value) ){
         calc.total = 0.00
         calc.total = parseInt(e.target.value)
         calc.calculateTip(calc.total, calc.percent, calc.people)
@@ -82,11 +101,21 @@ billInput.onchange = (e) => {
 }
 
 peopleInput.onchange = (e) => {
-    if(!isNaN( parseInt(e.target.value) ) || e.target.value === 0){
+    if(!isNaN(e.target.value) || e.target.value === 0){
     calc.people = parseInt(e.target.value)
     calc.calculateTip(calc.total, calc.percent, calc.people)
     }
     else{
         calc.throwError('Enter A Valid Amount')
     }
+}
+
+reset.onclick = () => {
+    calc.total = 0.00
+    calc.percent = 0
+    calc.people = 1
+    tipDisplay.textContent = '$0.00'
+    totalDisplay.textContent = '$0.00'
+    billInput.value = ''
+    peopleInput.value = ''
 }
