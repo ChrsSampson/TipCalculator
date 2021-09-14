@@ -36,18 +36,18 @@
         <div class="container">
           <label class="label-dark">Select Tip %</label>
           <article class="app-btn-container">
-            <button class="btn-tip">5%</button>
-            <button class="btn-tip">10%</button>
-            <button class="btn-tip">15%</button>
-            <button class="btn-tip">25%</button>
-            <button class="btn-tip">50%</button>
+            <button class="btn-tip" value=.05>5%</button>
+            <button class="btn-tip" value=.10>10%</button>
+            <button class="btn-tip" value=.15>15%</button>
+            <button class="btn-tip" value=.25>25%</button>
+            <button class="btn-tip" value=.50>50%</button>
             <input type="text" placeholder="Custom" class="input-custom">
           </article>
         </div>
         <article class="app-input">
           <label class="label-dark">Number of People</label>
           <label class="input-icon-people">
-          <input type="text" class="input" placeholder="1">
+          <input type="text" class="input" placeholder="1" id="people">
           </label>
         </article>
       </div>
@@ -58,14 +58,14 @@
               <label class="label-light">Tip Amount</label>
               <sub class="sub-label">/ person</sub>
             </div>
-            <span class="total">$0.00</span>
+            <span class="total" id="tip">$0.00</span>
           </div>
           <div class="result-container">
             <div class="container">
               <label class="label-light">Total</label>
               <sub class="sub-label">/ person</sub>
             </div>
-            <span class="total">$0.00</span>
+            <span class="total" id="total">$0.00</span>
           </div>
           <button class="btn-reset">RESET</button>
         </article>
@@ -78,5 +78,6 @@
     </div>
 
   </div>
+<script src="app.js" />
 </body>
 </html>
