@@ -5,15 +5,13 @@ button{
 }
 
 input[class~="input"]{
-    border:none;
+    border:3px solid $Light_grayish_cyan;
     background-color: $Light_grayish_cyan;
     text-align: right;
     border-radius: .5em;
     padding: .5em 1em;
     width: calc(100% - 2em);
 }
-
-
 
 //---------buttons----------
 .app-btn-container > button{
@@ -35,21 +33,29 @@ input[class~="input"]{
 
 // ---------Inputs----------
 .input-custom{
-    margin:.25em;
+    margin:.5em;
     border-radius: .5em;
     background-color: $Light_grayish_cyan;
     color: $Dark_grayish_cyan;
     border:none;
 
     &:focus{
+        border:2px solid;
         border-color: $Strong_cyan;
     }
     &:hover{
+        border:2px solid;
         border-color: $Strong_cyan;
     }
 }
 
 .input:focus{
+    border:2px solid;
+    border-color: $Strong_cyan;
+}
+
+.input:hover{
+    border:3px solid;
     border-color: $Strong_cyan;
 }
 
@@ -85,5 +91,19 @@ input[class~="input"]{
         background-position: center;
         background-repeat: no-repeat;
     }
+}
+
+
+// ---------Utility classes----------
+.error{
+    color: $Error_red;
+}
+
+.hidden{
+    display: none;
+}
+
+.selected{
+    background-color: $Strong_cyan;
 }
 

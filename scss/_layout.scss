@@ -27,6 +27,11 @@ article[class~="app-input"]{
     display: flex;
     flex-direction: column;
     margin: 2em 0;
+
+    .label-container{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 div[class~="container"]{
@@ -81,8 +86,6 @@ article[class~="container"]{
             width: 50%;
         }
     }
-
-
     
     article[class~="container"]{
         margin-left:.5em;
@@ -91,6 +94,28 @@ article[class~="container"]{
         button{
             position: relative;
             bottom: -55%;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+    .app-wrapper{
+        width: 1200px;
+    }
+
+    article[class~="container"]{
+
+        button{
+            bottom: -20%;
+        }
+    }
+
+    div[class~="container"]{
+
+        article[class~="app-btn-container"]{
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 1fr 1fr;
         }
     }
 

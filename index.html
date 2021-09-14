@@ -28,7 +28,10 @@
     <section class="app-wrapper">
       <div class="column">
         <article class="app-input">
-          <label class="label-dark">Bill</label>
+          <div class="label-container">
+            <label class="label-dark">Bill</label>
+            <label class="label-dark hidden error" id="bill-error">Enter A Valid Number</label>
+          </div>
           <label class="input-icon-dollar">
             <input type="text" class="input input-money" placeholder="0.00">
           </label>
@@ -45,7 +48,10 @@
           </article>
         </div>
         <article class="app-input">
-          <label class="label-dark">Number of People</label>
+          <div class="label-container">
+            <label class="label-dark">Number of People</label>
+            <label class="label-dark hidden error" id="people-error">Enter A Valid Number</label>
+          </div>
           <label class="input-icon-people">
           <input type="text" class="input" placeholder="1" id="people">
           </label>

@@ -2,9 +2,10 @@ const tipButtons = document.querySelector('.app-btn-container');
 const billInput = document.querySelector('.input-money')
 const peopleInput = document.querySelector('#people')
 const customTip = document.querySelector('.input-custom')
+const billError = document.querySelector('#bill-error')
+const peopleError = document.querySelector('#people-error')
 
 const reset = document.querySelector('.btn-reset')
-
 
 const tipDisplay = document.querySelector('#tip');
 const totalDisplay = document.querySelector('#total');
@@ -61,11 +62,35 @@ class Calc {
         }
     }
 
-    throwError (error){
-        console.log(error)
+    selectButton(element){
+        Array.from(element.parentElement.children).forEach(child => {
+            if(child.classList.contains('selected')){
+                child.classList.remove('selected')
+            }
+        })
+        if(element.tagName === 'BUTTON'){
+            element.classList.add('selected')
+        }
+    }
+
+    toggleError (element){
+        element.classList.toggle('hidden')
+    }
+
+    resetCalc (){
+        calc.total = 0.00
+        calc.percent = 0
+        calc.people = 1
+        tipDisplay.textContent = '$0.00'
+        totalDisplay.textContent = '$0.00'
+        billInput.value = ''
+        peopleInput.value = ''
     }
 
 }
+
+
+// -----------------------Event Handlers-------------------------
 
 window.onload = () => {
     calc = new Calc();
@@ -73,6 +98,7 @@ window.onload = () => {
 
 tipButtons.addEventListener('click', (e) => {
     if(e.target.nodeName === "BUTTON"){
+        calc.selectButton(e.target)
         calc.determineTip(e.target.value)
         calc.calculateTip(calc.total, calc.percent, calc.people)
         customTip.value = ''
@@ -81,41 +107,45 @@ tipButtons.addEventListener('click', (e) => {
 
 customTip.onchange = (e) => {
     if(!isNaN(e.target.value) ){
-        calc.percent = `.${e.target.value}`
+        calc.percent = `0.${e.target.value}`
         calc.calculateTip(calc.total, calc.percent, calc.people)
     }
     else{
-        calc.throwError('Enter A Valid Amount')
+        
     }
+}
+
+customTip.onclick = (e) => {
+    calc.selectButton(e.target);
 }
 
 billInput.onchange = (e) => {
     if(!isNaN(e.target.value) ){
+        if(!billError.classList.contains('hidden')){
+            calc.toggleError(billError)
+        }
         calc.total = 0.00
         calc.total = parseInt(e.target.value)
         calc.calculateTip(calc.total, calc.percent, calc.people)
     }
     else{
-        calc.throwError('Enter A Valid Amount')
+        calc.toggleError(billError)
     }
 }
 
 peopleInput.onchange = (e) => {
     if(!isNaN(e.target.value) || e.target.value === 0){
-    calc.people = parseInt(e.target.value)
-    calc.calculateTip(calc.total, calc.percent, calc.people)
+        if(!peopleError.classList.contains('hidden')){
+            calc.toggleError(peopleError)
+        }
+        calc.people = parseInt(e.target.value)
+        calc.calculateTip(calc.total, calc.percent, calc.people)
     }
     else{
-        calc.throwError('Enter A Valid Amount')
+        calc.toggleError(peopleError)
     }
 }
 
 reset.onclick = () => {
-    calc.total = 0.00
-    calc.percent = 0
-    calc.people = 1
-    tipDisplay.textContent = '$0.00'
-    totalDisplay.textContent = '$0.00'
-    billInput.value = ''
-    peopleInput.value = ''
+    calc.resetCalc()
 }
