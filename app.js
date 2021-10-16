@@ -10,7 +10,7 @@ const reset = document.querySelector('.btn-reset')
 const tipDisplay = document.querySelector('#tip');
 const totalDisplay = document.querySelector('#total');
 
-let calc = ''
+let calc = '' 
 
 class Calc {
     constructor (){
