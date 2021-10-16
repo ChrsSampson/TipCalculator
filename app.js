@@ -92,9 +92,9 @@ class Calc {
 
 // -----------------------Event Handlers-------------------------
 
-window.onload = () => {
+window.addEventListener ('load', () => {
     calc = new Calc();
-}
+})
 
 tipButtons.addEventListener('click', (e) => {
     if(e.target.nodeName === "BUTTON"){
